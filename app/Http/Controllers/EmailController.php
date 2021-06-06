@@ -25,12 +25,12 @@ class EmailController extends Controller
         {
         $to_name = 'abdulatif';
         $to_email = 'fasijardiq@gmail.com';
-        $data = array('name'=>"Cloudways (sender_name)", "body" => "A test mail");
+        $data = array('name'=>"$to_name", "body" => "pesan registrasi");
         
         Mail::send('mail', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)
-        ->subject('Laravel Test Mail');
-        $message->from('koperandalan@gmail.com','Test Mail');
+        ->subject('Register Akun');
+        $message->from('koperandalan@gmail.com','PERIKSA-IN');
     });
     
     return 'Email sent Successfully';
