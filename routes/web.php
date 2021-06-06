@@ -70,6 +70,9 @@ Route::get('/cek/rekening/{no_rek}', [HomeController::class, 'index_rek'])->name
 
 Route::get('/cek/telepon/{no_telepon}', [HomeController::class, 'index_telp'])->name('cek_telepon');
 
+Route::get('/kirim-email', 'EmailController@index');
+Route::get('/send/email', 'EmailController@mail');
+
 Route::get('/404', function () {
     return view('404');
 })->name('show_404');

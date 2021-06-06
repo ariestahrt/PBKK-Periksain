@@ -57,4 +57,11 @@ class HomeController extends Controller
         $data = Report::where('kontak_pelaku', $no_telepon)->paginate(10);
         return view('cek.cek_telepon', ['data' => $data, 'no_telepon'=> $no_telepon]);
     }
+    public function mail()
+    {
+        $name = 'Cloudways';
+        Mail::to('Cloudways@Cloudways.com')->send(new SendMailable($name));
+   
+        return 'Email sent Successfully';
+    }
 }
